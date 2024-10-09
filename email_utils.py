@@ -2,11 +2,11 @@ import imaplib
 import email
 from email.header import decode_header
 
-# Configuration for your email account
-IMAP_SERVER = "imap.gmail.com"  # For Gmail
+IMAP_SERVER = "imap.gmail.com"
 IMAP_PORT = 993
-USERNAME = "your_email@gmail.com"  # Replace with your Gmail address
-PASSWORD = "your_password"  # Replace with your Gmail app-specific password
+USERNAME = ""
+PASSWORD = ""
+
 
 def connect_to_inbox():
     """Connects to the email inbox using IMAP."""
@@ -22,7 +22,6 @@ def connect_to_inbox():
 def fetch_emails(mail, num_emails=5):
     """Fetches the most recent emails."""
     try:
-        # Search for all emails in the inbox
         status, messages = mail.search(None, "ALL")
         email_ids = messages[0].split()[-num_emails:]  # Get the latest emails
         email_list = []

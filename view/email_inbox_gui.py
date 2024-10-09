@@ -30,7 +30,7 @@ class EmailInboxGUI(tk.Tk):
 
     def fetch_emails(self):
         """Fetches emails from the inbox."""
-        mail = connect_to_inbox()
+        mail = connect_to_inbox()  # Connect using utility function
         if mail:
             emails = fetch_emails(mail)
             self.email_listbox.delete(0, tk.END)
@@ -44,7 +44,7 @@ class EmailInboxGUI(tk.Tk):
         selected_idx = self.email_listbox.curselection()
         if selected_idx:
             email = self.email_data[selected_idx[0]]
-            email_body = parse_email_body(email[2])
+            email_body = parse_email_body(email[2])  # Parse using utility function
             self.email_content.delete("1.0", tk.END)
             self.email_content.insert(tk.END, email_body)
             if self.email_analyzer.analyze_email(email_body):
