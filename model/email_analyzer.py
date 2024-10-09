@@ -8,7 +8,7 @@ class EmailAnalyzer:
     #Handles email analysis for phishing indicators
 
     def __init__(self):
-        self.suspicious_keywords = ["urgent", "free", "password", "account", "click here", "verify", "limited time", "prize"]
+        self.suspicious_keywords = ["urgent", "free", "verify", "limited time", "prize","warning","account suspended","security alert","action required"]
         self.suspicious_extensions = [".exe", ".bat", ".scr", ".vbs", ".js", ".pif", ".com", ".lnk"]
 
     def analyze_email(self, email_body):
